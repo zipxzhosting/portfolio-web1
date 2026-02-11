@@ -1,2 +1,2 @@
 # zipxz-web
-datadiri-web HTML
+langz-web HTML
