@@ -31,10 +31,6 @@ body{
   }
 }
 
-.hero-title span{
-  vertical-align: middle;
-}
-
 .bg-video {
   position: fixed;
   top: 0;
@@ -183,6 +179,82 @@ section{
   color:#fb3;
   font-weight:bold;
 }
+
+.payment-manual{
+  max-width:400px;
+  margin:40px auto;
+  padding:20px;
+  background:rgba(255,0,0,0.05);
+  border-radius:15px;
+  text-align:center;
+}
+
+.payment-manual input{
+  width:100%;
+  padding:10px;
+  margin:8px 0;
+  border-radius:8px;
+  border:1px solid #ccc;
+}
+
+.payment-manual button{
+  background:red;
+  color:white;
+  border:none;
+  padding:10px 20px;
+  border-radius:10px;
+  cursor:pointer;
+}
+
+.payment-manual button:hover{
+  background:#b30000;
+}
+
+.payment-manual{
+  max-width:400px;
+  margin:40px auto;
+  padding:20px;
+  background:rgba(255,0,0,0.05);
+  border-radius:15px;
+  text-align:center;
+}
+
+.qris-img{
+  width:220px;
+  margin:15px 0;
+  border-radius:12px;
+  box-shadow:0 0 15px rgba(255,0,0,0.3);
+}
+
+.payment-manual input{
+  width:100%;
+  padding:10px;
+  margin:8px 0;
+  border-radius:8px;
+  border:1px solid #ccc;
+}
+
+.payment-manual button{
+  background:red;
+  color:white;
+  border:none;
+  padding:10px 20px;
+  border-radius:10px;
+  cursor:pointer;
+}
+
+.payment-manual button:hover{
+  background:#b30000;
+}
+
+.text {
+  background: rgba(255, 0, 0, 0.15); /* merah transparan */
+  padding: 6px 14px;
+  border-radius: 12px;
+  backdrop-filter: blur(6px);
+  vertical-align: middle;
+}
+
 </style>
 </head>
 <body>
@@ -207,7 +279,7 @@ section{
 
 <!-- HOME -->
 <section id="home" class="hero">
-  <h1 class="hero-title">Hi, I'm <span>Galang Ziven A.P</span>, Web Developer.</h1>
+  <h1 class="text">Hi, I'm <span>Galang Ziven A.P</span>, Web Developer.</h1>
   <p class="hero-title">Welcome to my portfolio website.</p>
   <div class="content active">
 
@@ -272,36 +344,50 @@ section{
 
   <div class="shop-tabs">
     <button class="active" onclick="openShop(0)">Semua</button>
-    <button onclick="openShop(1)">Template</button>
-    <button onclick="openShop(2)">Jasa</button>
+    <button onclick="openShop(1)">Jasweb</button>
+    <button onclick="openShop(2)">Escape</button>
   </div>
 
   <div class="shop-content active">
     <div class="product">
-      <h4>Portfolio Template</h4>
-      <p class="price">Rp 50.000</p>
+      <h4>Jasa Buat Website</h4>
+      <p class="price">Rp50.000</p>
     </div>
     <div class="product">
-      <h4>Landing Page</h4>
-      <p class="price">Rp 70.000</p>
-    </div>
-  </div>
-
-  <div class="shop-content">
-    <div class="product">
-      <h4>Portfolio Template</h4>
-      <p class="price">Rp 50.000</p>
+      <h4>Brainrot Vs Tsunami</h4>
+      <p class="price">!Tergantung</p>
     </div>
   </div>
 
   <div class="shop-content">
     <div class="product">
       <h4>Jasa Buat Website (free domain)</h4>
-      <p class="price">Rp 70.000</p>
+      <p class="price">Rp50.000</p>
+    </div>
+  </div>
+
+  <div class="shop-content">
+    <div class="product">
+      <h4>Brainrot Vs Tsunami</h4>
+      <p class="price">!Tergantung</p>
     </div>
   </div>
 </section>
 
+<section class="payment-manual">
+  <h2 class="text">Payment Manual</h2>
+
+  <p class="text">Silakan transfer ke:</p>
+  <p class="text"><strong>DANA:</strong> 081529400814</p>
+  <p class="text"><strong>GOPAY:</strong> 08585716801O</p>
+
+  <h2 class="text">Pembayaran QRIS</h2>
+
+  <p class="text">Scan QRIS di bawah ini:</p>
+
+  <img src="qris.png" alt="QRIS Payment" class="qris-img">
+
+</section>
 
 <!-- CONTACT -->
 <section id="contact" class="contact">
@@ -352,17 +438,6 @@ function animateBars(){
 
 window.addEventListener("scroll", animateBars);
 window.addEventListener("load", animateBars);
-
-function openShop(index){
-  const tabs = document.querySelectorAll(".shop-tabs button");
-  const contents = document.querySelectorAll(".shop-content");
-
-  tabs.forEach(t=>t.classList.remove("active"));
-  contents.forEach(c=>c.classList.remove("active"));
-
-  tabs[index].classList.add("active");
-  contents[index].classList.add("active");
-}
 
 </script>
 
