@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pilih Masuk</title>
+
+<style>
+{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins', sans-serif;
+}
+
+body{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+  background:black;
+}
+
+/* VIDEO BACKGROUND */
+.bg-video{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  z-index:-1;
+}
+
+/* Overlay Gelap */
+.overlay{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.6);
+  z-index:-1;
+}
+
+/* Container */
+.gate-box{
+  text-align:center;
+  padding:50px;
+  border-radius:30px;
+  border:2px solid red;
+  box-shadow:
+    0 0 20px red,
+    0 0 40px rgba(255,0,0,0.6);
+  background:rgba(0,0,0,0.5);
+  backdrop-filter:blur(10px);
+}
+
+/* Title */
+.gate-box h1{
+  color:red;
+  margin-bottom:30px;
+  font-size:35px;
+  text-shadow:
+    0 0 10px red,
+    0 0 20px red,
+    0 0 40px red;
+}
+
+/* Button */
+.gate-box a{
+  display:block;
+  margin:15px 0;
+  padding:12px 30px;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:bold;
+  color:white;
+  background:#16213e;
+  border:2px solid red;
+  transition:0.3s;
+}
+
+.gate-box a:hover{
+  background:red;
+  box-shadow:
+    0 0 15px red,
+    0 0 30px red;
+  transform:scale(1.05);
+}
+</style>
+</head>
+<body>
+
+<!-- VIDEO -->
+<video autoplay muted loop class="bg-video">
+  <source src="masuk.mp4" type="video/mp4">
+</video>
+
+<audio id="bg-audio" loop>
+  <source src="masuk.mp3" type="audio/mpeg">
+</audio>
+
+<div class="overlay"></div>
+
+<div class="gate-box">
+  <h1>Pilih Menu</h1>
+  <a href="index.html">🚀 Masuk Website</a>
+  <a href="payment.html">💳 Masuk Payment</a>
+</div>
+
+<!-- JAVASCRIPT -->
+<script>
+  const audio = document.getElementById("bg-audio");
+
+  function startAudio() {
+    audio.play();
+    document.removeEventListener("click", startAudio);
+  }
+
+  document.addEventListener("click", startAudio);
+</script>
+
+</body>
+</html>
